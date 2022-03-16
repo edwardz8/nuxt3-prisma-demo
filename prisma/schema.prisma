@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model pitcher {
+  name              String   @db.VarChar(20)
+  team              String?  @db.VarChar(20)
+  wins              Int?
+  losses            Int?
+  era               Decimal? @db.Decimal
+  games             Int?
+  games_started     Int?
+  saves             Int?
+  innings_pitched   Decimal? @db.Decimal
+  hits              Int?
+  earned_runs       Int?
+  home_runs_allowed Int?
+  strikeouts        Int?
+  walks             Int?
+  whip              Decimal? @db.Decimal
+  ks_per_nine       Decimal? @db.Decimal
+  walks_per_nine    Decimal? @db.Decimal
+  fip               Decimal? @db.Decimal
+  war               Decimal? @db.Decimal
+  ra_nine_war       Decimal? @db.Decimal
+  adp               Decimal? @db.Decimal
+  id                Int      @id
+}
